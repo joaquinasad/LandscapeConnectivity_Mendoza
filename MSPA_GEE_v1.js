@@ -1,6 +1,4 @@
-//---------------------------------------------------------------------
-// 1-INTEGRACIÓN Y RECORTE DE CLASES ORIGINALES DE MAPBIOMAS (1985-2024)
-//---------------------------------------------------------------------
+//RECORTE DE CLASES ORIGINALES DE MAPBIOMAS (1985-2024)
 
 // Área de estudio
 var roi = ee.FeatureCollection("projects/earthengine-legacy/assets/users/joaquinasad/areadeestudio3");
@@ -49,9 +47,7 @@ var coleccionOriginales = ee.ImageCollection(years.map(procesarAñoOriginal));
 
 print('Colección MapBiomas Integrada con clases originales (1985-2024):', coleccionOriginales);
 
-// --------------------------------------------------------------------
-// 2 Y 3 - MSPA AGRUPADO Y ANÁLISIS ESPACIAL DE SUPERFICIES (1985-2024)
-// --------------------------------------------------------------------
+//MSPA AGRUPADO Y ANÁLISIS ESPACIAL DE SUPERFICIES (1985-2024)
 
 //Selección de clases naturales (MapBiomas)
 var clasesNaturales = [3, 4, 66, 77, 45, 12, 11, 33, 34, 25]; 
@@ -122,9 +118,7 @@ var chartAreas = ui.Chart.feature.byFeature({
 });
 print('Análisis de Áreas por Año:', chartAreas);
 
-// --------------------------------------------------------
-// 4 - EXTRACCIÓN DE NODOS DE HÁBITAT NATURAL Y COORDENADAS
-// --------------------------------------------------------
+// EXTRACCIÓN DE NODOS DE HÁBITAT NATURAL Y COORDENADAS
 
 var extraerNodosAnuales = function(img) {
   var year = ee.Number.parse(img.get('year'));
@@ -259,9 +253,7 @@ var slider = ui.Slider({
 // Agregar el Slider
 Map.add(slider);
 
-// -----------------------------------
-// 5- EXPORTACIÓN DE RASTERS PARA QGIS
-// -----------------------------------
+// EXPORTACIÓN DE RASTERS PARA QGIS
 
 // Aislar las imágenes de la cobertura de MapBiomas
 var imgMB_1985 = ee.Image(coleccionOriginales.filter(ee.Filter.eq('year', 1985)).first());
@@ -313,9 +305,8 @@ Export.image.toDrive({
   maxPixels: 1e13
 });
 
-// ---------------------------------------------------
-// PASO 6: CÁLCULO DE IPC, JOIN ESPACIAL Y EXPORTACIÓN
-// ---------------------------------------------------
+
+// CÁLCULO DE IPC, JOIN ESPACIAL Y EXPORTACIÓN
 
 // Cargar la tabla generada en el script de R 
 var tablaImportancia = ee.FeatureCollection("users/joaquinasad/Nodos_Importancia_2024_v2");
