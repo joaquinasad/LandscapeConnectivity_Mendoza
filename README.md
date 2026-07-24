@@ -1,7 +1,7 @@
 # LandscapeConnectivity_Mendoza
 R and GEE scripts for modeling landscape connectivity and assessing habitat fragmentation in the dryland socio-ecosystems of northen Mendoza, Argentina.
 
-#Español
+##Español
 ## Descripción del Proyecto
 
 Este repositorio contiene el código fuente utilizado para modelar y analizar la dinámica estructural del paisaje y la conectividad ecológica en las tierras secas del Centro-Norte de Mendoza. El enfoque metodológico combina los datos de cobertura y uso del suelo de la plataforma MapBiomas Argentina con el Análisis Espacial de Patrones Morfológicos (MSPA) y Índice de Probabilidad de Conectividad - PC, para evaluar la fragmentación del hábitat en el periodo 1985-2024 y priorizar áreas críticas para la conservación.
@@ -22,9 +22,7 @@ El flujo de trabajo se divide en tres etapas principales, representadas por los 
 
 Las herramientas y resultados derivados de este código están diseñados para integrarse en instrumentos de planificación territorial. Buscan facilitar la gobernanza ambiental frente a las presiones antrópicas, proponiendo la conservación y creación de áreas protegidas, contribuyendo así a la resiliencia del socioecosistema.
 
-#English
-# LandscapeConnectivity_Mendoza
-
+##English
 ## Project Description
 
 This repository contains the source code used to model and analyze landscape structural dynamics and ecological connectivity in the drylands of Central-Northern Mendoza. The methodological approach combines land cover and land use data from the MapBiomas Argentina platform with Morphological Spatial Pattern Analysis (MSPA) and the Probability of Connectivity (PC) index, to assess habitat fragmentation in the 1985-2024 period and prioritize critical areas for conservation.
