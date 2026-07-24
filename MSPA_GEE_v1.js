@@ -6,7 +6,7 @@
 var roi = ee.FeatureCollection("projects/earthengine-legacy/assets/users/joaquinasad/areadeestudio3");
 
 // Importación de activos de MapBiomas Cuyo y Urbano
-var mapbiomasGeneral = ee.Image("projects/mapbiomas-argentina/assets/LAND-COVER/COLLECTION-3/GENERAL/CLASSIFICATION/FINAL_CLASSIFICATION/CUYO/CUYO-FINAL-v1");
+var mapbiomasGeneral = ee.Image("projects/mapbiomas-argentina/assets/LAND-COVER/COLLECTION-2/GENERAL/CLASSIFICATION/FINAL_CLASSIFICATION/CUYO/CUYO-FINAL-v1");
 var mapbiomasUrbano = ee.Image("projects/mapbiomas-argentina/assets/LAND-COVER/COLLECTION-2/GENERAL/URBAN/CLASSIFICATION/FINAL_CLASSIFICATION/urban_argentina_1985-2024_v1");
 
 // Módulo de paletas oficiales de MapBiomas Argentina
