@@ -4,27 +4,19 @@ R and GEE scripts for modeling landscape connectivity and assessing habitat frag
 #Español
 ## Descripción del Proyecto
 
-Este repositorio contiene el código fuente utilizado para modelar y analizar la dinámica estructural del paisaje y la conectividad ecológica en las tierras secas del Centro-Norte de Mendoza. El enfoque metodológico combina el Análisis Espacial de Patrones Morfológicos (MSPA) con la teoría de grafos (Índice de Probabilidad de Conectividad - PC) para evaluar la fragmentación histórica (1985-2024) y priorizar áreas críticas para la conservación.
+Este repositorio contiene el código fuente utilizado para modelar y analizar la dinámica estructural del paisaje y la conectividad ecológica en las tierras secas del Centro-Norte de Mendoza. El enfoque metodológico combina los datos de cobertura y uso del suelo de la plataforma MapBiomas Argentina con el Análisis Espacial de Patrones Morfológicos (MSPA) y Índice de Probabilidad de Conectividad - PC, para evaluar la fragmentación del hábitat en el periodo 1985-2024 y priorizar áreas críticas para la conservación.
 
-Los scripts permiten identificar y analizar refugios de biodiversidad clave y corredores ecológicos, con especial énfasis en el extenso paisaje natural de los Foothills y el sistema de humedales Leyes-Tulumaya.
+Los scripts permiten identificar y analizar refugios de biodiversidad clave y corredores ecológicos, en el socioecosistema del centro-norte de la provincia de Mendoza, Argentina.
 
 ## Estructura del Repositorio
 
 El flujo de trabajo se divide en tres etapas principales, representadas por los siguientes scripts:
 
-*   **`MSPA_GEE_v1.js`**: Script desarrollado en Google Earth Engine (JavaScript) para la automatización del procesamiento espacial. Toma las clasificaciones históricas de cobertura del suelo, aplica reglas morfológicas y clasifica el paisaje natural en categorías topológicas estructurales (núcleos, conectores, bordes, etc.).
+*   **`MSPA_GEE_v1.js`**: Script desarrollado en Google Earth Engine para la automatización del procesamiento espacial. Toma las clasificaciones históricas de cobertura del suelo de MapBiomas, aplica reglas morfológicas y clasifica el paisaje natural en categorías topológicas estructurales (núcleos, conectores, bordes, etc.).
   
-*   **`Calculo_SuperficiesMSPA.R`**: Script en R destinado al procesamiento estadístico y visualización de los datos generados por el MSPA. Incluye limpieza de datos, ajuste de modelos de regresión lineal simple y generación de figuras unificadas con calidad de publicación utilizando `ggplot2` y `patchwork`.
+*   **`Calculo_SuperficiesMSPA.R`**: Script en R destinado al procesamiento estadístico y visualización de los datos generados por el MSPA. Incluye limpieza de datos, ajuste de modelos de regresión lineal simple y generación de figuras.
   
-*   **`Calculo_IndiceDeConectividad.R`**: Script en R diseñado para evaluar la importancia relativa de los parches de hábitat mediante el cálculo del Índice de Probabilidad de Conectividad (PC). Permite priorizar espacialmente los nodos, identificando las áreas de máximo valor (PC > 0.75) para sustentar estrategias de conservación y mitigación de la fragmentación.
-
-## Requisitos y Tecnologías
-
-*   **Google Earth Engine (GEE)**: Cuenta activa para ejecutar el procesamiento geoespacial en la nube.
-*   **R & RStudio**: Versión 4.0 o superior.
-*   **Paquetes de R principales**: 
-    *   `dplyr`, `tidyr` (Manipulación de datos)
-    *   `ggplot2`, `patchwork`, `scales` (Visualización)
+*   **`Calculo_IndiceDeConectividad.R`**: Script en R diseñado para evaluar la importancia relativa de los parches de hábitat mediante el cálculo del Índice de Probabilidad de Conectividad (PC). Permite priorizar espacialmente los núcleos de hábitat natural, identificando las áreas de máximo valor para la  conservación (PC > 0.75) y así sustentar estrategias de conservación y mitigación de la fragmentación.
 
 ## Aplicación y Alcance
 
@@ -33,32 +25,22 @@ Las herramientas y resultados derivados de este código están diseñados para i
 #English
 # LandscapeConnectivity_Mendoza
 
-R and GEE scripts for modeling landscape connectivity and assessing habitat fragmentation in the dryland socio-ecosystems of northern Mendoza, Argentina.
-
 ## Project Description
 
-This repository contains the source code used to model and analyze landscape structural dynamics and ecological connectivity in the drylands of Central-Northern Mendoza. The methodological approach combines Morphological Spatial Pattern Analysis (MSPA) with graph theory (Probability of Connectivity index - PC) to assess historical fragmentation (1985-2024) and prioritize critical conservation areas.
+This repository contains the source code used to model and analyze landscape structural dynamics and ecological connectivity in the drylands of Central-Northern Mendoza. The methodological approach combines land cover and land use data from the MapBiomas Argentina platform with Morphological Spatial Pattern Analysis (MSPA) and the Probability of Connectivity (PC) index, to assess habitat fragmentation in the 1985-2024 period and prioritize critical areas for conservation.
 
-The scripts allow for the identification and analysis of key biodiversity refuges and ecological corridors, with special emphasis on the extensive natural landscape of the Foothills and the Leyes-Tulumaya wetland system.
+The scripts allow for the identification and analysis of key biodiversity refuges and ecological corridors within the socio-ecosystem of central-northern Mendoza province, Argentina.
 
 ## Repository Structure
 
 The workflow is divided into three main stages, represented by the following scripts:
 
-*   **`MSPA_GEE_v1.js`**: Script developed in Google Earth Engine (JavaScript) for the automation of spatial processing. It takes historical land cover classifications, applies morphological rules, and classifies the natural landscape into structural topological categories (cores, corridors, edges, etc.).
+*   **`MSPA_GEE_v1.js`**: Script developed in Google Earth Engine for the automation of spatial processing. It takes the historical land cover classifications from MapBiomas, applies morphological rules, and classifies the natural landscape into structural topological categories (cores, corridors, edges, etc.).
   
-*   **`Calculo_SuperficiesMSPA.R`**: R script intended for the statistical processing and visualization of data generated by MSPA. It includes data cleaning, fitting of simple linear regression models, and the generation of unified publication-quality figures using `ggplot2` and `patchwork`.
+*   **`Calculo_SuperficiesMSPA.R`**: R script intended for the statistical processing and visualization of the data generated by MSPA. It includes data cleaning, fitting of simple linear regression models, and figure generation.
   
-*   **`Calculo_IndiceDeConectividad.R`**: R script designed to evaluate the relative importance of habitat patches by calculating the Probability of Connectivity (PC) index. It allows for the spatial prioritization of nodes, identifying maximum-value areas (PC > 0.75) to support conservation strategies and fragmentation mitigation.
-
-## Requirements and Technologies
-
-*   **Google Earth Engine (GEE)**: Active account to run cloud-based geospatial processing.
-*   **R & RStudio**: Version 4.0 or higher.
-*   **Main R packages**: 
-    *   `dplyr`, `tidyr` (Data manipulation)
-    *   `ggplot2`, `patchwork`, `scales` (Data visualization)
+*   **`Calculo_IndiceDeConectividad.R`**: R script designed to evaluate the relative importance of habitat patches by calculating the Probability of Connectivity (PC) index. It allows for the spatial prioritization of natural habitat cores, identifying maximum-value areas for conservation (PC > 0.75) and thus supporting conservation strategies and fragmentation mitigation.
 
 ## Application and Scope
 
-The tools and results derived from this code are designed to be integrated into territorial planning instruments. They seek to facilitate environmental governance in the face of human pressures, proposing the conservation and creation of protected areas, thereby contributing to the resilience of the socio-ecosystem.
+The tools and results derived from this code are designed to be integrated into territorial planning instruments. They seek to facilitate environmental governance in the face of anthropogenic pressures, proposing the conservation and creation of protected areas, thereby contributing to the resilience of the socio-ecosystem.
